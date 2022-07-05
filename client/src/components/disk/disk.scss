@@ -6,6 +6,7 @@
 
   &__btns {
     display: flex;
+    align-items: center;
   }
 
   &__create {
@@ -23,7 +24,6 @@
   &__upload {
     position: relative;
     &-label {
-      position: absolute;
       width: 120px;
       border: 2px dashed $font-color;
       padding: 5px 10px;
@@ -34,6 +34,21 @@
 
   &__select {
     margin-left: auto;
+    padding: 7px 40px 7px 12px;
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 3px -2px #9098a9;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all .3ms ease;
+    option {
+      transition: all .3ms ease;
+      &:hover {
+        background: rgb(146, 90, 90);
+      }
+    }
   }
 
   &__list,
@@ -144,7 +159,7 @@
 @media (max-width: 600px) {
   .disk {
     &__btns {
-      align-items: center;
+      flex-flow: row wrap;
     }
     &__btn {
       font-size: 10px;
@@ -162,6 +177,17 @@
     &__list, &__plate {
       height: 15px;
       width: 15px;
+    }
+  }
+}
+
+@media (max-width: 315px) {
+  .disk__select {
+    margin: 0;
+  }
+  .disk {
+    &__select, &__plate, &__list {
+      margin-top: 20px;
     }
   }
 }

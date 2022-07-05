@@ -1,3 +1,5 @@
+@import '../../utils/colors.scss';
+
 .navbar {
   display: flex;
   height: 50px;
@@ -18,8 +20,26 @@
     cursor: pointer;
   }
   &__search {
+    display: flex;
+    align-items: center;
     width: 200px;
     margin-left: 30px;
+    position: relative;
+    &-input {
+      background-color: $background-color;
+      border-radius: 6px;
+      border: 1px solid $font-color;
+      &::placeholder {
+        font-size: 10px;
+      }
+    }
+    svg {
+      position: absolute;
+      left: 10px;
+      width: 15px;
+      height: 15px;
+      fill: $font-color;
+    }
   }
   &__avatar {
     width: 40px;
@@ -53,7 +73,20 @@
       font-size: 0.8rem;
     }
     &__search {
-      width: 100px;
+      width: 130px;
+      font-size: 7px;
+      margin-left: 15px;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar {
+    &__header {
+      font-size: 0.8rem;
+    }
+    &__search {
+      width: 130px;
       font-size: 7px;
       margin-left: 15px;
     }

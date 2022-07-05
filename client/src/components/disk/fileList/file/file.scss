@@ -1,4 +1,5 @@
 .file {
+  transition: all 0.5s ease;
   margin: 10px 0;
   border-bottom: solid 2px #566885;
   display: grid;
@@ -85,9 +86,14 @@
 
 @media (max-width: 500px) {
   .file {
+    grid-template-columns: 1fr 2fr repeat(2, 2fr);
     img {
-      width: 25px;
-      height: 25px;
+      width: 35px;
+      height: 35px;
     }
+    &__name, &__date, &__size {
+      font-size: 14px;
+    }
+    
   }
 }
